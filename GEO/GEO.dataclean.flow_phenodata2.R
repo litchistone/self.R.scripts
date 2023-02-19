@@ -15,7 +15,7 @@ phen.pdata <- list.files(path = './data/',pattern = 'pdata.csv$',
                          full.names = T) %>% 
   lapply(., read.csv, row.names = 1)
 
-# 2. 分别清洗各个数据
+# 2. 分别清洗各个数据（excel熟悉者此步骤可在excel中操作，更加直观）
 #### 
 phen1 <- phen.pdata[[1]]
 phen1$Histology %>% table
