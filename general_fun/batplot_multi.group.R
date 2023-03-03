@@ -18,6 +18,13 @@ mydata$group <- annot_col[match(rownames(mydata),  rownames(annot_col)), 1]
 # 宽变长
 ggdata <- pivot_longer(data = mydata, cols = !group, names_to = "Cell", 
                        values_to = "Value")
+ggdata[1:3,1:3]
+##  A tibble: 3 × 3
+##  group    Cell                        Value
+##  <fct>    <chr>                       <dbl>
+##  cluster3 Activated CD8 T cell        0.514
+##  cluster3 Central memory CD8 T cell   0.669
+##  cluster3 Effector memeory CD8 T cell 0.450
 # plot
 ggplot(ggdata, aes(x=Cell, y=Value, fill=group))+
   geom_boxplot(width=0.7,size=0.3,outlier.color = NA)+
