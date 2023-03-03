@@ -16,8 +16,7 @@ mydata[1:4,1:3]  # 仍然是宽型数据（长型数据是：每行能确定一�
 # 添加分组信息
 mydata$group <- annot_col[match(rownames(mydata),  rownames(annot_col)), 1]
 # 宽变长
-ggdata <- pivot_longer(data = mydata, cols = !group, names_to = "Cell", 
-                       values_to = "Value")
+ggdata <- pivot_longer(data = mydata, cols = !group, names_to = "Cell",  values_to = "Value")
 ggdata[1:3,1:3]
 ##  A tibble: 3 × 3
 ##  group    Cell                        Value
